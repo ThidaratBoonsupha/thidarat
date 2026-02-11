@@ -8,14 +8,14 @@
 // PHP: f.php - รับข้อมูลจากแบบฟอร์มและแสดงผล
 
 // ตรวจสอบว่ามีการส่งข้อมูลมาหรือไม่
-if ($_SERVER["REQUEST_METHOD"] != "POST") {
+//if ($_SERVER["REQUEST_METHOD"] != "POST") {
     // หากไม่มีการส่งข้อมูลมาโดยตรง ให้เปลี่ยนเส้นทางกลับไปหน้าฟอร์ม (แนะนำ)
-    header("Location: application_form.php"); 
-    exit;
+   // header("Location: application_form.php"); 
+   // exit;
 }
 
 // 1. รับค่าจากฟอร์ม (ใช้ name attribute) อย่างปลอดภัย
-$position = isset($_POST['position']) ? htmlspecialchars($_($_POST['position'])) : 'ตำแหน่งที่ต้องการสมัคร';
+$position = isset($_POST['position']) ? htmlspecialchars(($_POST['position']) : 'ตำแหน่งที่ต้องการสมัคร';
 $prefix = isset($_POST['prefix']) ? htmlspecialchars($_POST['prefix']) : 'คำนำหน้าชื่อ';
 $firstName = isset($_POST['firstName']) ? htmlspecialchars($_POST['firstName']) : 'ไม่ได้ระบุ';
 $lastName = isset($_POST['lastName']) ? htmlspecialchars($_POST['lastName']) : 'ไม่ได้ระบุ';
